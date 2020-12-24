@@ -5,7 +5,9 @@ const figlet = require('figlet')
 const Generator = require('yeoman-generator')
 const printMessage = require('print-message')
 
-module.exports = class extends Generator {
+module.exports = class extends (
+  Generator
+) {
   prompting() {
     this.log(`👋 Welcome to the ${chalk.magenta("Ashish Patel's")} generator!`)
 
@@ -29,7 +31,6 @@ module.exports = class extends Generator {
     ]
 
     return this.prompt(prompts).then((props) => {
-      // To access props later use this.props.someAnswer;
       this.props = props
     })
   }
